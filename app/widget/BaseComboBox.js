@@ -1,0 +1,16 @@
+Ext.define('wealthmgr.widget.BaseComboBox',{
+	extend: 'Ext.form.field.ComboBox',
+	alias: 'widget.BaseComboBox',
+	minChars: 2,
+	typeAhead: false,
+	enableKeyEvents: true,
+	labelAlign: 'right',
+	labelWidth: 90,
+	listeners: {
+		keydown: function(obj, event, opts) {
+			if (event.getKey() === Ext.EventObject.BACKSPACE && event.shiftKey) {
+				obj.setValue(null);
+			}
+		}
+	}
+});

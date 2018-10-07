@@ -1,0 +1,14 @@
+Ext.define('JSolicitudDias.widget.FilterFichajes',{
+	extend: 'JSolicitudDias.widget.BaseFilter',
+	alias: 'widget.FilterFichajes',
+	initComponent: function() {
+		var me = this;
+		Ext.apply(me, {
+				store: me.buildStore()
+		});
+		me.callParent(arguments);
+	},
+	buildStore: function() {
+		return Ext.create('JSolicitudDias.store.FilterFichajes');
+	}
+});

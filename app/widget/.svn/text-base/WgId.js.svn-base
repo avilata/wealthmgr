@@ -1,0 +1,7 @@
+Ext.define('JSolicitudDias.widget.WgId',{
+	extend: 'JSolicitudDias.widget.BaseText',
+	alias: 'widget.WgId',
+	enableKeyEvents: true,
+	fieldLabel: 'Id',
+	name: 'id'
+});

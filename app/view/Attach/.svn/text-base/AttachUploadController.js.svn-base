@@ -1,0 +1,88 @@
+Ext.define('wealthmgr.view.Attach.AttachUploadController', {
+	extend: 'Ext.app.ViewController',
+	alias: 'controller.attachUpload',
+	refs: [
+	       { ref: 'asunto', selector: 'AttachUpload WgAsunto' },
+	       { ref: 'file', selector: 'AttachUpload WgFile' },
+	       { ref: 'tipo', selector: 'AttachUpload WgTipoAdjunto' }
+	       ],
+	init: function() {
+		this.control({
+			'AttachUpload WgAsunto': {
+				afterrender: function(t) {t.setValue('dummy');}
+			},
+			'AttachUpload WgFile': {
+				change: this.doChange
+			},
+			'AttachUpload button[action=submit]': {
+				click: this.formSubmit
+//				render: this.onLock
+			},
+			'AttachUpload button[action=cancel]': {
+				click: this.formCancel
+			},
+			'AttachUpload [name=tipo]': {
+				afterrender: function(t) {
+						 t.getStore().load({ 	// se ejecuta cuando esta cargado
+		        	          callback: function (records,operations,success) {
+		        	        	 if (records.length>0) {
+		        	    	       t.setValue(records[1].get('id'));
+		        	        	 } else {
+		    						 t.setValue(1);
+//		    						 Ext.getCmp('solgeneral-tipoDiaLibre').setValue(1);
+	        	        		 }
+	        	        	 }
+	            	     });
+		 		}
+			}
+		});
+	},
+
+	/**
+	 *
+	 */
+	doChange: function(component) {
+		
+		var form = component.up('AttachUpload');
+		if (form.down('WgFile').getValue() === null || form.down('WgFile').getValue() === '') {
+			var asunto = form.down('WgFile').getValue();
+			asunto = asunto.substring(asunto.lastIndexOf('\\') + 1);
+			form.down('WgAsunto').setValue(asunto);
+		}
+	},
+
+	/**
+	 *
+	 */
+	formCancel: function(button, record) {
+		button.up('window').close();
+	},
+
+	/**
+	 *
+	 */
+	formSubmit: function(button, record) {
+		var panel = button.up('AttachUpload'),
+			form = panel.getForm(),
+			code = panel.code,
+			type = panel.type,
+			main = wealthmgr.app.getController('generalController');
+
+//		if (!form.isValid()) return;
+
+		form.submit({
+			url: 'data/attach/' + code + '/' + type,
+			success: function() {
+				main.status(true, 'FileUpload', null);
+				panel.ctrl.doAttachRefresh(panel.bttn);
+				button.up('window').close();
+			},
+			failure: function() {
+				main.status(false, 'FileUpload', null);
+			}
+		});
+	}
+
+
+
+});

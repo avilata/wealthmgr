@@ -1,0 +1,20 @@
+Ext.define('JSolicitudDias.widget.BaseFilter',{
+	extend: 'JSolicitudDias.widget.BaseComboBox',
+	alias: 'widget.BaseFilter',
+	fieldLabel: 'Filtro',
+	labelWidth: 35,
+	flex: 1,
+	name: 'id',
+	displayField: 'filter',
+	valueField: 'id',
+	listConfig: {
+		getInnerTpl: function() {
+			return '<div>' +
+				'<tpl if="id &lt; 10">' +
+				'	<div class="icon-combo-pin">{filter}</div>' + 
+				'<tpl else>' +
+				'   <div class="icon-combo-funnel">{filter}</div>' +
+				'</tpl></div>';
+		}
+	}
+});

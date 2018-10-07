@@ -1,0 +1,6 @@
+Ext.define('JSolicitudDias.widget.WgFile',{
+	extend: 'JSolicitudDias.widget.BaseFile',
+	alias: 'widget.WgFile',
+	fieldLabel: 'Archivo',
+	name: 'file'
+});

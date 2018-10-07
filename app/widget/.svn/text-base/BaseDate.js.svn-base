@@ -1,0 +1,8 @@
+Ext.define('JSolicitudDias.widget.BaseDate',{
+	extend: 'Ext.form.field.Date',
+	alias: 'widget.BaseDate',
+	labelAlign: 'right',
+	labelWidth: 90,
+	startDay: 1,
+	format: 'd/m/Y' // H:i:s'
+});

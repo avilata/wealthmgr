@@ -1,0 +1,1 @@
+sencha -sdk C:\sencha\ext-6.2.0 generate app -classic --theme-name ext-theme-crisp  wealthmgr ./

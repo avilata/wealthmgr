@@ -1,0 +1,26 @@
+Ext.define('JSolicitudDias.widget.WgTecnico',{
+	extend: 'JSolicitudDias.widget.BaseComboBox',
+	alias: 'widget.WgTecnico',
+	fieldLabel: 'Técnico',
+	name: 'tecnico',
+	displayField: 'nombre',
+	valueField: 'id',
+//	 enableKeyEvents: true,
+	 typeAhead: true,
+
+	initComponent: function() {
+		var me = this;
+		Ext.apply(me, {
+				store: me.buildStore()
+		});
+		me.callParent(arguments);
+	},
+	buildStore: function() {
+		return Ext.create('JSolicitudDias.store.CPersonal_of');
+	},
+	listConfig: {
+		getInnerTpl: function() {
+			return '<tpl for="."><div><img src="img/flag/{flag}.png" style="vertical-align:middle">&nbsp;{nombre}</div></tpl>';
+		}
+	}
+});

@@ -1,0 +1,17 @@
+INSTRUCCIONES PARA ESTE ENTORNO WEBEMPRESA
+==========================================
+¡ OJO ! MYSQL devuelve los int como strings en WEBEMPRESA. Cuidado con las comparaciones. He tenido que modificar el Auth.php para adpatar la comprobacion de verified
+
+Si nos olvidamos del pwd del administrador-> He dejado un pwd.php en la carpea php. Lo editas y le pones el pwd que quieres poner nuevo y te devuelve el base64 que tienes que ir a la tabla "users" de la bd y machacar en el campo pwd
+
+tambien he dejado un script log.php en la carpeta php/lib que tiene una funcion write_log("error","tipo") que dejara un archivo "milogxxxx.txt" en carpeta del php padre que estamos ejecutando.
+
+el pwd jvilata@edicom.es --> jvilata
+
+
+--------
+EN SENCHA6 los controles ux hay que copiarlos en el directorio /ext/classic/src desde package/ux
+
+----
+OJO que en local hay que modificar php/bd_attach y quitar acrpeta "privado" del $target_dir = "/privado/uploads/
+o RENOMBRARLO a wealthmgr en lugar de privado

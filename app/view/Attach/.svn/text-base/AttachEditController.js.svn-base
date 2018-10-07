@@ -1,0 +1,101 @@
+Ext.define('wealthmgr.view.Attach.AttachEditController', {
+	extend: 'Ext.app.ViewController',
+	alias: 'controller.attachEdit',
+	refs: [
+	       { ref: 'asunto', selector: 'AttachEdit WgAsunto' },
+	       { ref: 'tipo', selector: 'AttachEdit WgTipoAdjunto' }
+	       ],
+	init: function() {
+		this.control({
+			'AttachEdit WgId': {
+				render: this.renderId
+			},
+			'AttachEdit WgAsunto': {
+				render: this.renderAsunto
+			},
+			'AttachEdit WgTipoAdjunto': {
+				render: this.renderTipo
+			},
+			'AttachEdit button[action=submit]': {
+				click: this.formSubmit,
+				render: this.onLock
+			},
+			'AttachEdit button[action=cancel]': {
+				click: this.formCancel
+			}
+		});
+	},
+
+	/**
+	 *
+	 */
+	formCancel: function(button, record) {
+		button.up('window').close();
+	},
+
+	/**
+	 *
+	 */
+	formSubmit: function(button, record) {
+		var panel = button.up('AttachEdit'),
+			model = panel.model,
+			form = panel.getForm(),
+			main = wealthmgr.app.getController('generalController');
+
+		if (!form.isValid()) return;
+
+		model.set('subject', panel.down('WgAsunto').getValue());
+		model.set('attachtype', panel.down('WgTipoAdjunto').getValue());
+		model.set('usr','edicom');
+		model.set('ts',new Date());
+
+		model.save({
+			callback: function(record, operation, success) {
+				main.status(success, 'Editar Adjunto', operation.request._proxy.reader.rawData.msg);
+				if (record.get('attachtype')=='Justificante') {
+					var strEmail=panel.formPermiso.record.get('empleadoEmail')+";"+panel.formPermiso.record.get('empleadoEmailNotif'),
+					    strAsun="Justificante admitido para permiso/baja "+panel.formPermiso.record.get('idtext')+", de fecha:"+Ext.Date.format(panel.formPermiso.record.get('fechaDesde'),'d/m/Y')+" --"+Ext.Date.format(panel.formPermiso.record.get('fechaHasta'),'d/m/Y');
+					main.enviarMail("edicom@edicom.es",strEmail,strAsun,strAsun);
+
+				}
+				if (!success) return;
+				button.up('window').close();
+				panel.ctrl.doAttachRefresh(panel.bttn);
+			}
+		});
+	},
+
+	/**
+	 *
+	 */
+	renderId: function(component) {
+		var panel = component.up('AttachEdit');
+		component.setValue(panel.model.get('id'));
+	},
+
+	/**
+	 *
+	 */
+	renderAsunto: function(component) {
+		var panel = component.up('AttachEdit');
+		component.setValue(panel.model.get('subject'));
+	},
+
+	/**
+	 *
+	 */
+	renderTipo: function(component) {
+		var panel = component.up('AttachEdit');
+		component.setValue(panel.model.get('attachtype'));
+	},
+
+	/**
+	 *
+	 */
+	onLock: function(component) {
+		var panel = component.up('AttachEdit'),
+			main = wealthmgr.app.getController('generalController');
+//		main.checkAuth(component, panel.lock);
+	}
+
+});

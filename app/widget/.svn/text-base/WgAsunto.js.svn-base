@@ -1,0 +1,9 @@
+Ext.define('JSolicitudDias.widget.WgAsunto',{
+	extend: 'JSolicitudDias.widget.BaseText',
+	alias: 'widget.WgAsunto',
+	fieldLabel: 'Asunto',
+	fieldStyle: 'font-weight:bold;',
+	maxLength: 250,
+	enforceMaxLength: true,
+	name: 'asunto'
+});

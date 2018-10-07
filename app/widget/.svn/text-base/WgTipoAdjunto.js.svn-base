@@ -1,0 +1,9 @@
+Ext.define('JSolicitudDias.widget.WgTipoAdjunto',{
+	extend: 'JSolicitudDias.widget.BaseComboBox',
+	alias: 'widget.WgTipoAdjunto',
+	fieldLabel: 'Tipo',
+	name: 'tipo',
+	store: 'TypeAttach',
+	displayField: 'id',
+	valueField: 'id'
+});
