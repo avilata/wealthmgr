@@ -1,5 +1,5 @@
 $app-name:  dynamic( 'wealthmgr' );
-$image-search-path: 'C:/jvil/build/production/wealthmgr/resources';
+$image-search-path: 'C:/eclipse-workspace/wealthmgr/build/production/wealthmgr/resources';
 $theme-name:  dynamic( 'ext-theme-crisp' );
 $include-ext-abstractcomponent: dynamic(true);;
 $include-ext-abstractcontainer: dynamic(true);;

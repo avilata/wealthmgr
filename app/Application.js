@@ -1,18 +1,7 @@
-﻿
+﻿// pongo aqui las dependencias de controles sencha
 
 
 // pongo aqui el require de todos los archivos del proyecto así no tengo que poner requires en cada uno de los archivos 
-Ext.require([
-'Ext.ux.statusbar.StatusBar' //jv.7.10.18. he tenido que copiar la carpeta packages/classic/ux en /ext/classic/src
-//'Ext.ux.CheckColumn',
-//'Ext.data.proxy.Rest',
-//'Ext.form.FieldContainer',
-//'Ext.form.field.Date',
-//'Ext.toolbar.Spacer',
-//'Ext.util.Cookies',
-//'Ext.grid.*',
-//'Ext.util.History'
- ]);
 Ext.require([
              'wealthmgr.model.*',
              'wealthmgr.store.*',

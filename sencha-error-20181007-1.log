@@ -1,0 +1,130 @@
+Sencha Cmd 6.6.0.13 - Crash report
+================================================
+An error occurred while executing the following command: --ext c:\sencha\ext-6.2.0 app init
+
+Diagnostic information:
+=======================
+                         app.archivePath : archive                                           
+                      app.bootstrap.base : C:\eclipse-workspace\wealthmgr                    
+                       app.bootstrap.css : bootstrap.css                                     
+               app.bootstrap.microloader : bootstrap.js                                      
+                        app.cache.deltas : true                                              
+                        app.cache.enable : false                                             
+                           app.classpath : app                                               
+                         app.classpath.0 : app                                               
+                    app.classpath.length : 1                                                 
+                         app.cmd.version : 6.6.0.13                                          
+                          app.compressor : null                                              
+                          app.config.dir : C:\eclipse-workspace\wealthmgr\.sencha\app        
+                app.cordova.cache.enable : false                                             
+                   app.cordova.config.id : com.domain.wealthmgr                              
+                 app.cordova.config.name : wealthmgr                                         
+                 app.cordova.config.path : C:\eclipse-workspace\wealthmgr/cordova            
+               app.cordova.config.target :                                                   
+              app.cordova.config.verbose : false                                             
+                   app.cordova.js.0.path : cordova.js                                        
+               app.cordova.js.0.priority : 1000                                              
+                 app.cordova.js.0.remote : true                                              
+                   app.cordova.js.length : 1                                                 
+                 app.cordova.microloader : C:\eclipse-workspace\wealthmgr\.sencha\app/Microloader.js
+      app.cordova.output.appCache.enable : false                                             
+                 app.cordova.output.base : C:\eclipse-workspace\wealthmgr/cordova/www        
+             app.cordova.output.manifest : ${build.id}.json                                  
+                 app.cordova.output.page : index.html                                        
+             app.development.watch.delay : 250                                               
+                                 app.dir : C:\eclipse-workspace\wealthmgr                    
+              app.fashion.inliner.enable : false                                             
+                           app.framework : ext                                               
+                   app.framework.version : 6.2.0.981                                         
+                                  app.id : 417c7469-72ff-43a7-bd94-25053d9225fb              
+                       app.indexHtmlPath : index.html                                        
+                        app.loader.cache : false                                             
+                   app.loader.cacheParam : _dc                                               
+                                app.name : wealthmgr                                         
+                           app.namespace : wealthmgr                                         
+              app.output.appCache.enable : false                                             
+                         app.output.base : ${workspace.build.dir}/${build.environment}/wealthmgr
+           app.output.microloader.enable : true                                              
+                           app.overrides : overrides                                         
+                         app.overrides.0 : overrides                                         
+                    app.overrides.length : 1                                                 
+               app.phonegap.cache.enable : false                                             
+                  app.phonegap.config.id : com.domain.wealthmgr                              
+                app.phonegap.config.name : wealthmgr                                         
+                app.phonegap.config.path : C:\eclipse-workspace\wealthmgr/phonegap           
+              app.phonegap.config.remote : false                                             
+             app.phonegap.config.verbose : false                                             
+                  app.phonegap.js.0.path : cordova.js                                        
+              app.phonegap.js.0.priority : 1000                                              
+                app.phonegap.js.0.remote : true                                              
+                  app.phonegap.js.length : 1                                                 
+                app.phonegap.microloader : C:\eclipse-workspace\wealthmgr\.sencha\app/Microloader.js
+     app.phonegap.output.appCache.enable : false                                             
+                app.phonegap.output.base : C:\eclipse-workspace\wealthmgr/phonegap/www       
+            app.phonegap.output.manifest : ${build.id}.json                                  
+                app.phonegap.output.page : index.html                                        
+             app.production.cache.enable : true                                              
+          app.production.compressor.type : yui                                               
+             app.production.loader.cache : ${build.timestamp}                                
+   app.production.output.appCache.enable : true                                              
+     app.production.output.appCache.path : cache.appcache                                    
+                      app.resource.paths :                                                   
+                            app.sass.etc : sass/etc/all.scss                                 
+                          app.sass.etc.0 : sass/etc/all.scss                                 
+                     app.sass.etc.length : 1                                                 
+                  app.sass.generated.src : sass/save                                         
+                  app.sass.generated.var : sass/save.scss                                    
+                      app.sass.namespace : wealthmgr                                         
+                            app.sass.src : sass/src                                          
+                          app.sass.src.0 : sass/src                                          
+                     app.sass.src.length : 1                                                 
+                            app.sass.var : sass/var/all.scss,sass/var                        
+                          app.sass.var.0 : sass/var/all.scss                                 
+                          app.sass.var.1 : sass/var                                          
+                     app.sass.var.length : 2                                                 
+                 app.slicer.cache.enable : false                                             
+        app.slicer.js.0.isWidgetManifest : true                                              
+                    app.slicer.js.0.path : sass/example/custom.js                            
+                    app.slicer.js.length : 1                                                 
+       app.slicer.output.appCache.enable : false                                             
+                               app.theme : ext-theme-crisp                                   
+                             app.toolkit : classic                                           
+                             app.version : 1.0.0.0                                           
+                    buildenvironment.dir : C:\eclipse-workspace\wealthmgr                    
+               buildenvironment.load.dir : C:\eclipse-workspace\wealthmgr                    
+                          cmd.config.dir : C:\Users\MartaVilata\bin\Sencha\Cmd\6.6.0.13      
+                                 cmd.dir : C:\Users\MartaVilata\bin\Sencha\Cmd\6.6.0.13      
+              cmd.merge.tool.args.araxis : -wait -merge -3 -a1 {base} {user} {generated} {out}
+              cmd.merge.tool.args.kdiff3 : {base} {user} {generated} -o {out}                
+             cmd.merge.tool.args.p4merge : {base} {user} {generated} {out}                   
+           cmd.merge.tool.args.smartsync : {user} {generated} {base}                         
+          cmd.merge.tool.args.sourcegear : --merge --result={out} {user} {base} {generated}  
+            cmd.merge.tool.args.tortoise : -base:{base} -theirs:{generated} -mine:{user} -merged:{out}
+                              cmd.minver : 3.0.0.0                                           
+                            cmd.platform : windows                                           
+                     cmd.unicode.escapes : C:\Users\MartaVilata\bin\Sencha\Cmd\6.6.0.13/unicode-escapes.json
+                             cmd.version : 6.6.0.13                                          
+                            cmd.web.port : 1841                                              
+                       inspector.address : http://localhost:1839/                            
+                          repo.local.dir : C:\Users\MartaVilata\bin\Sencha\Cmd\repo          
+                       shared.sencha.dir : false                                             
+        system.java.net.useSystemProxies : true                                              
+                              theme.name : ext-theme-crisp                                   
+                            toolkit.name : classic                                           
+
+Exception information:
+=======================
+No such property : ext
+     at com.sencha.cli.AbstractCommand$Properties.getProperty(AbstractCommand.java:444)
+     at com.sencha.cli.AbstractCommand.parseConfigParam(AbstractCommand.java:468)
+     at com.sencha.cli.AbstractCommand.processConfigParam(AbstractCommand.java:518)
+     at com.sencha.cli.AbstractCommand.configure(AbstractCommand.java:114)
+     at com.sencha.command.Sencha.main(Sencha.java:135)
+     at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+     at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+     at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+     at java.lang.reflect.Method.invoke(Unknown Source)
+     at com.exe4j.runtime.LauncherEngine.launch(LauncherEngine.java:65)
+     at com.exe4j.runtime.WinLauncher.main(WinLauncher.java:101)
+     at com.install4j.runtime.launcher.WinLauncher.main(WinLauncher.java:26)
+

@@ -1,2 +1,2 @@
 // @tag full-page
-// @require C:\jvil\app.js
+// @require C:\eclipse-workspace\wealthmgr\app.js
